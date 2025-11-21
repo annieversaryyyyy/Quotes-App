@@ -1,0 +1,25 @@
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.panel-left {
+  width: 30%;
+  padding: 15px;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: flex-start;
+  height: 20%;
+  flex-direction: column;
+
+  position: sticky;
+  top: 80px;
+
+}
+
+.panel-right {
+  width: 70%;
+  padding: 15px;
+}

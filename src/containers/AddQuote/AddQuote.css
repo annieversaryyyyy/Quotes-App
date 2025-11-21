@@ -1,0 +1,91 @@
+.formAdd {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "Oswald", sans-serif;
+}
+
+.formAdd label {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+}
+
+.textField,
+.authorField {
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: all 0.25s ease;
+  font-family: "Oswald", sans-serif;
+  color: rgb(66, 66, 67);
+}
+
+.textField:focus,
+.authorField:focus {
+  border-color: #646cff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+  outline: none;
+}
+
+.textField::placeholder,
+.authorField::placeholder {
+  font-family: "Oswald", sans-serif;
+  color: rgb(122, 122, 250);
+}
+
+.btnAdd {
+  padding: 14px;
+  border: none;
+  background: #646cff;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.form button:hover {
+  background: #4d53d9;
+}
+
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s ease;
+  appearance: none; /* убирает стандартную стрелку */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+select:hover {
+  border-color: #999;
+  background-color: #f0f0f0;
+}
+
+select:focus {
+  border-color: #5b8df7;
+  box-shadow: 0 0 0 3px rgba(91, 141, 247, 0.25);
+  background-color: #fff;
+}

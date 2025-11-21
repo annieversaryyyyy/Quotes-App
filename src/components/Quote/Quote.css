@@ -1,0 +1,29 @@
+.quote-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.quote-author {
+  text-align: right; 
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.quote-category {
+  font-size: 14px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
