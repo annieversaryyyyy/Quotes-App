@@ -11,7 +11,6 @@ function AddQuote() {
     text: "",
     author: "Джейсон Стетхем",
     category: "",
-    categoryId: "",
   });
   const navigate = useNavigate();
   const [toastVisible, setToastVisible] = useState(false);
@@ -27,14 +26,14 @@ function AddQuote() {
     try {
       await axiosApi.post("quotes.json", dataToSend);
       setToastVisible(true);
-      setQuoteData({
-        text: "",
-        category: "",
-      });
       setTimeout(() => {
         setToastVisible(false);
         navigate("/");
       }, 1000);
+      setQuoteData({
+        text: "",
+        category: "",
+      });
     } catch (error) {
       console.error(error);
     } finally {
@@ -73,11 +72,15 @@ function AddQuote() {
             onChange={onChangeInput}
             required
           >
-            {categories.map((cat) => (
-              <option key={cat.id} value={cat.title}>
-                {cat.title}
-              </option>
-            ))}
+            <option value="">Выберите категорию</option>
+
+            {categories
+              .filter((cat) => cat.id !== "all")
+              .map((cat) => (
+                <option key={cat.id} value={cat.title}>
+                  {cat.title}
+                </option>
+              ))}
           </select>
           <label htmlFor="text">Text:</label>
           <input

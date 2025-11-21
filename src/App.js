@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -13,7 +12,6 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/quotes/:id"  element={<Home />} />
         <Route path="/new"  element={<AddQuote />} />
-
 
         <Route render={() => <h1>Not found</h1>} />
       </Routes>

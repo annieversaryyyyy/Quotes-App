@@ -6,11 +6,16 @@ import Quote from "../../components/Quote/Quote";
 import CategoryPanel from "../../components/CategoryPanel/CategoryPanel";
 import { useParams } from "react-router-dom";
 import Preloader from "../../components/Preloader/Preloader";
+import Pagination from "../../components/Pagination/Pagination";
+import Toast from "../../components/Toast/Toast";
 
 function Home() {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const [toastVisible, setToastVisible] = useState(false);
 
   useEffect(() => {
     const getQuotes = async () => {
@@ -37,28 +42,61 @@ function Home() {
     getQuotes().catch((e) => console.log(e));
   }, []);
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [id]);
+
+  const deleteQuote = async (firebaseId) => {
+    try {
+      await axiosApi.delete(`quotes/${firebaseId}.json`);
+      setToastVisible(true);
+      setTimeout(() => {
+        setToastVisible(false);
+      }, 1000);
+      setQuotes((prev) => prev.filter((q) => q.firebaseId !== firebaseId));
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const filteredQuotes =
     !id || id === "all" ? quotes : quotes.filter((q) => q.categoryId === id);
+  const lastIndex = currentPage * postsPerPage;
+  const firstIndex = lastIndex - postsPerPage;
+  const currentPosts = filteredQuotes.slice(firstIndex, lastIndex);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) return <Preloader />;
 
-   if (!quotes.length) {
-    return <p >Пока нет созданных цитат, будь первым !</p>;
+  if (!quotes.length) {
+    return <p>Пока нет созданных цитат, будь первым !</p>;
   }
 
   return (
-    <div className="layout">
-      <div className="panel-left">
-        <CategoryPanel categories={categories} />
-      </div>
+    <>
+      <div className="layout">
+        <div className="panel-left">
+          <CategoryPanel categories={categories} />
+        </div>
 
-      <div className="panel-right">
-        {filteredQuotes.map((quote) => (
-          <Quote key={quote.firebaseId} quote={quote} />
-        ))}
+        <div className="panel-right">
+          {currentPosts.map((quote) => (
+            <Quote
+              key={quote.firebaseId}
+              quote={quote}
+              deleteQuote={() => deleteQuote(quote.firebaseId)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+      <Pagination
+        postsPerPage={postsPerPage}
+        quotes={filteredQuotes.length}
+        currentPage={currentPage}
+        paginate={paginate}
+      />
+      <Toast message="Цитата успешно удалена" visible={toastVisible} />
+    </>
   );
 }
 
