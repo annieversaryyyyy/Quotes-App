@@ -5,7 +5,7 @@ function Header() {
       <a href="/" className="nav-logo-link">
         <div className="nav-logo">Цитаты Джейсона Стетхэма</div>
       </a>
-      <nav className="nav__menu">
+      <nav className="nav-menu">
         <a className="nav-link" href="/new">
           Создать новую цитату
         </a>

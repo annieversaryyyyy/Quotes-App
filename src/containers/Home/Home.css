@@ -16,10 +16,15 @@
 
   position: sticky;
   top: 80px;
-
 }
 
 .panel-right {
   width: 70%;
   padding: 15px;
+}
+
+@media (max-width: 685px) {
+  .panel-left {
+    top: 150px;
+  }
 }
