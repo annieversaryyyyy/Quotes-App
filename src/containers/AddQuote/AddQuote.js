@@ -65,7 +65,7 @@ function AddQuote() {
   return (
     <>
       <div>
-        <form onSubmit={newQuote} className="formAdd">
+        <form onSubmit={newQuote} className="form-add">
           <select
             name="category"
             value={quoteData.category}
@@ -86,13 +86,13 @@ function AddQuote() {
           <input
             type="text"
             name="text"
-            className="textField"
+            className="text-field"
             required
             value={quoteData.text}
             onChange={onChangeInput}
             placeholder="text"
           />
-          <button type="submit" className="btnAdd">
+          <button type="submit" className="btn-add">
             Добавить цитату
           </button>
         </form>

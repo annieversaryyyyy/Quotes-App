@@ -1,24 +1,33 @@
-/* HTML: <div class="loader"></div> */
-.preloaderWrapper {
+.preloader-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh; /* или 100vh — если нужно ровно по центру окна */
+  min-height: 60vh;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 100px;
-  --b: 20px; 
+  --b: 20px;
   aspect-ratio: 1;
   border-radius: 50%;
   padding: 1px;
-  background: conic-gradient(#0000 10%,#ffffff) content-box;
-  -webkit-mask:
-    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
-    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  background: conic-gradient(#0000 10%, #ffffff) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
   -webkit-mask-composite: destination-in;
-          mask-composite: intersect;
-  animation:l4 1s infinite steps(10);
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
 }
-@keyframes l4 {to{transform: rotate(1turn)}}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}

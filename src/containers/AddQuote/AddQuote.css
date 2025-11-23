@@ -1,4 +1,4 @@
-.formAdd {
+.form-add {
   max-width: 420px;
   margin: 40px auto;
   padding: 24px;
@@ -11,15 +11,14 @@
   font-family: "Oswald", sans-serif;
 }
 
-.formAdd label {
+.form-add label {
   margin-bottom: 6px;
   font-size: 16px;
   font-weight: 500;
   font-family: "Raleway", sans-serif;
 }
 
-.textField,
-.authorField {
+.text-field {
   padding: 14px 16px;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
@@ -30,21 +29,19 @@
   color: rgb(66, 66, 67);
 }
 
-.textField:focus,
-.authorField:focus {
+.text-field:focus {
   border-color: #646cff;
   background: #fff;
   box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
   outline: none;
 }
 
-.textField::placeholder,
-.authorField::placeholder {
+.text-field::placeholder {
   font-family: "Oswald", sans-serif;
   color: rgb(122, 122, 250);
 }
 
-.btnAdd {
+.btn-add {
   padding: 14px;
   border: none;
   background: #646cff;
@@ -72,7 +69,7 @@ select {
   cursor: pointer;
   outline: none;
   transition: all 0.25s ease;
-  appearance: none; /* убирает стандартную стрелку */
+  appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;

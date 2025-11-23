@@ -1,6 +1,6 @@
 import React from "react";
 import "./Quote.css";
-import deleteImg from "../../assets/free-icon-garbage-9990957.png";
+import deleteImg from "../../assets/trash.png";
 
 function Quote({ quote, deleteQuote }) {
   return (

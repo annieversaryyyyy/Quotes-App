@@ -40,6 +40,11 @@
 
 .category-link-wrapper {
   text-decoration: none;
-  color: inherit;
+  color: black;
   display: block;   
+}
+
+.category-link-wrapper.active {
+  color:  #646cff;;
+  font-weight: 600;
 }

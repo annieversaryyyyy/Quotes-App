@@ -1,5 +1,5 @@
 import "./CategoryPanel.css";
-import dsImg from "../../assets/pngwing.com.png";
+import dsImg from "../../assets/mainPic.png";
 import { NavLink } from "react-router-dom";
 import { categories } from "../../categories";
 
@@ -11,7 +11,9 @@ function CategoryPanel() {
           <NavLink
             key={cat.id}
             to={cat.id === "all" ? "/" : `/quotes/${cat.id}`}
-            className="category-link-wrapper"
+            className={({ isActive }) =>
+              "category-link-wrapper" + (isActive ? " active" : "")
+            }
           >
             <li className="category-item">{cat.title}</li>
           </NavLink>
