@@ -72,7 +72,7 @@ function AddQuote() {
             onChange={onChangeInput}
             required
           >
-            <option value="">Выберите категорию</option>
+            <option value="">Здесь категорию выбират</option>
 
             {categories
               .filter((cat) => cat.id !== "all")
@@ -90,7 +90,7 @@ function AddQuote() {
             required
             value={quoteData.text}
             onChange={onChangeInput}
-            placeholder="text"
+            placeholder="Сюда цитату писат"
           />
           <button type="submit" className="btn-add">
             Добавить цитату
