@@ -23,8 +23,14 @@
   padding: 15px;
 }
 
+.not-found{
+    color: white;
+    text-align: center;
+}
+
 @media (max-width: 685px) {
   .panel-left {
     top: 150px;
   }
 }
+
